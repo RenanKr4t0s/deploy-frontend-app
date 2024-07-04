@@ -3,25 +3,24 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import UserList from './UserList';
 import AddUser from './AddUser';
 import EditUser from './EditUser';
-// import dotenv from 'dotenv';
-
-// dotenv.config();
+import apiUrl from '../env';
 
 const App = () => {
-  const apiUrl = 'http://localhost:3001';
+  
+  console.log(apiUrl);
 
   return (
     <Router>
       <div className="container">
-        <nav className="navbar navbar-expand-lg navbar-light bg-light">
-          <Link className="navbar-brand" to="/">User CRUD App</Link>
+        <nav className="navbar navbar-expand-lg navbar-light bg-light rounded-4 mt-2">
+          <Link className="navbar-brand mx-2" to="/">Usuários Cadastrados</Link>
           <div className="collapse navbar-collapse">
             <ul className="navbar-nav mr-auto">
-              <li className="nav-item">
-                <Link className="nav-link" to="/">Users</Link>
+              <li className="nav-item px-4">
+                <Link className="nav-link" to="/">Usuários</Link>
               </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/add">Add User</Link>
+              <li className="nav-item px-4">
+                <Link className="nav-link" to="/add">Adicionar Usuário</Link>
               </li>
             </ul>
           </div>

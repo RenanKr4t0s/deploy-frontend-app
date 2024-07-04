@@ -30,8 +30,10 @@ const UserList = ({ apiUrl }) => {
 
   return (
     <div className="container">
-      <h2>User List</h2>
-      <table className="table">
+      <h2 className='my-4'>Lista de usuários</h2>
+      <div className="containter bg-white rounded-4 p-1">
+
+      <table className="table table-striped rounded-4">
         <thead>
           <tr>
             <th>ID</th>
@@ -41,7 +43,7 @@ const UserList = ({ apiUrl }) => {
             <th>Actions</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody className="table-group-divider">
           {users.map(user => (
             <tr key={user.id}>
               <td>{user.id}</td>
@@ -49,9 +51,9 @@ const UserList = ({ apiUrl }) => {
               <td>{user.phone}</td>
               <td>{user.obs}</td>
               <td>
-                <Link to={`/edit/${user.id}`} className="btn btn-warning">Edit</Link>
+                <Link to={`/edit/${user.id}`} className="btn btn-warning mx-1">Edit</Link>
                 <button 
-                  className="btn btn-danger ml-2" 
+                  className="btn btn-danger mx-1" 
                   onClick={() => handleDelete(user.id)}
                 >
                   Delete
@@ -61,6 +63,7 @@ const UserList = ({ apiUrl }) => {
           ))}
         </tbody>
       </table>
+      </div>
     </div>
   );
 };
